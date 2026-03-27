@@ -115,10 +115,10 @@
                     transparan, mudah diakses, dan terpercaya.
                 </p>
                 <div class="hero-cta d-flex gap-3 flex-wrap" style="animation: fadeInUp 0.8s ease 0.6s both;">
-                    <a href="#layanan" class="btn btn-gold btn-lg">
-                        <i class="ti ti-arrow-right me-2"></i> Layanan Kami
+                    <a href="http://skm-poldasultra.com/" target="_blank" class="btn btn-warning btn-lg px-4" style="background: var(--polri-gold); border: none; color: #000; font-family: 'Outfit'; border-radius: 30px; box-shadow: 0 4px 15px rgba(212, 168, 67, 0.4); font-weight: 600;">
+                        <i class="ti ti-clipboard-check me-2" style="font-size: 1.3rem;"></i> Survei Kepuasan
                     </a>
-                    <a href="#berita" class="btn btn-outline-light-custom btn-lg">
+                    <a href="{{ route('berita.index') }}" class="btn btn-outline-light btn-lg px-4" style="border-radius: 30px; font-family: 'Outfit'; font-weight: 600;">
                         <i class="ti ti-news me-2"></i> Berita Terbaru
                     </a>
                 </div>
@@ -147,7 +147,7 @@
     </div>
 
     {{-- Absolute anchor for Pimpinan (Kapolda & Dirlantas) --}}
-    <div class="position-absolute bottom-0 start-0 w-100 d-flex justify-content-center" style="pointer-events: none; z-index: 2;">
+    <div class="position-absolute bottom-0 start-0 w-100 d-flex justify-content-center d-none d-lg-flex" style="pointer-events: none; z-index: 2;">
         <div class="container-xl position-relative h-100">
             <div class="hero-pimpinan-wrapper d-flex align-items-end justify-content-end" style="pointer-events: auto; position: absolute; bottom: 0; right: 0; z-index: 2;">
                 
@@ -196,8 +196,8 @@
             {{-- Kapolda --}}
             <div class="col-md-5 col-lg-4">
                 <div class="pejabat-card animate-on-scroll delay-1">
-                    <div class="pejabat-photo" style="background: linear-gradient(135deg, #1A5DAD, #003580); padding: 0; overflow: hidden; display: flex; align-items: flex-end;">
-                        <img src="{{ asset('images/kapolda.png') }}" alt="Kapolda Sultra" style="width: 100%; height: 95%; object-fit: contain; object-position: bottom; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">
+                    <div class="pejabat-photo" style="background: linear-gradient(135deg, #1A5DAD, #003580); padding: 0; overflow: hidden; width: 100%; height: 480px; display: flex; align-items: flex-start;">
+                        <img src="{{ asset('images/kapolda.png') }}" alt="Kapolda Sultra" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">
                     </div>
                     <div class="pejabat-info">
                         <h5>Irjen Pol. Didik Agung Widjanarko, S.I.K., M.H</h5>
@@ -209,8 +209,8 @@
             {{-- Dirlantas --}}
             <div class="col-md-5 col-lg-4">
                 <div class="pejabat-card animate-on-scroll delay-2">
-                    <div class="pejabat-photo" style="background: linear-gradient(135deg, #1A5DAD, #003580); padding: 0; overflow: hidden; display: flex; align-items: flex-end;">
-                        <img src="{{ asset('images/dirlantas.png') }}" alt="Dirlantas Polda Sultra" style="width: 100%; height: 95%; object-fit: contain; object-position: bottom; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">
+                    <div class="pejabat-photo" style="background: linear-gradient(135deg, #1A5DAD, #003580); padding: 0; overflow: hidden; width: 100%; height: 480px; display: flex; align-items: flex-start;">
+                        <img src="{{ asset('images/dirlantas.png') }}" alt="Dirlantas Polda Sultra" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">
                     </div>
                     <div class="pejabat-info">
                         <h5>Kombes Pol. Dr. Argowiyono, S.H., S.I.K., M.Si.</h5>
