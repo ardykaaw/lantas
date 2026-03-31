@@ -569,7 +569,7 @@
                                                     <h5 class="card-title fw-bold lh-sm mb-2" style="font-size: 1.15rem;">
                                                         <a href="{{ route('berita.show', $sidePost->slug) }}"
                                                             class="text-dark text-decoration-none">{{ Str::limit($sidePost->title, 55)
-                                                            }}</a>
+                                                                                }}</a>
                                                     </h5>
                                                     <p class="card-text text-muted small"><i class="ti ti-clock me-1"></i> {{
                                 $sidePost->created_at->format('d M Y') }}</p>
@@ -622,10 +622,10 @@
                         <h2 class="section-title mb-0" style="padding-bottom: 0;">Galeri Instagram</h2>
                     </div>
                     <p class="section-subtitle mt-2 animate-on-scroll delay-1">
-                        Ikuti kegiatan terbaru kami di Instagram resmi @lantaspoldasultra
+                        Ikuti kegiatan terbaru kami di Instagram resmi @ditlantas_polda_sultra
                     </p>
                 </div>
-                <a href="https://instagram.com/lantaspoldasultra" target="_blank"
+                <a href="https://instagram.com/ditlantas_polda_sultra" target="_blank"
                     class="btn btn-primary btn-instagram rounded-pill animate-on-scroll delay-2">
                     <i class="ti ti-brand-instagram me-2"></i> Follow Kami
                 </a>
