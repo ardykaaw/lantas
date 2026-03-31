@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 
 class PublicController extends Controller
 {
@@ -16,6 +18,7 @@ class PublicController extends Controller
                      ->take(4)
                      ->get();
 
+        // Instagram Posts handle by Widget (EmbedSocial/Elfsight)
         return view('home', compact('posts'));
     }
 
