@@ -41,7 +41,13 @@ class PostController extends Controller
             $data['image'] = $request->file('image')->store('posts', 'public');
         }
 
-        Post::create($data);
+        $post = Post::create($data);
+
+        // Update created_at if provided
+        if ($request->filled('created_at')) {
+            $post->created_at = $request->created_at;
+            $post->save();
+        }
 
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil ditambahkan');
     }
@@ -81,6 +87,12 @@ class PostController extends Controller
         }
 
         $post->update($data);
+
+        // Update created_at if provided
+        if ($request->filled('created_at')) {
+            $post->created_at = $request->created_at;
+            $post->save();
+        }
 
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil diupdate');
     }

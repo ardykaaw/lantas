@@ -22,14 +22,23 @@ class PublicController extends Controller
         return view('home', compact('posts'));
     }
 
-    public function berita()
+    public function berita(Request $request)
     {
-        $posts = Post::where('status', 'published')
+        $query = Post::where('status', 'published')
                      ->with(['category', 'user'])
-                     ->latest()
-                     ->paginate(9);
+                     ->latest();
 
-        return view('public.berita', compact('posts'));
+        // Filter by category if requested
+        if ($request->has('category')) {
+            $query->whereHas('category', function($q) use ($request) {
+                $q->where('slug', $request->category);
+            });
+        }
+
+        $posts = $query->paginate(9);
+        $categories = \App\Models\Category::all();
+
+        return view('public.berita', compact('posts', 'categories'));
     }
 
     public function showBerita($slug)

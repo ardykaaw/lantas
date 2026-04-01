@@ -78,10 +78,10 @@
               </td>
               <td class="text-end">
                 <a href="{{ route('admin.pejabat.edit', $officer->id) }}" class="btn btn-icon btn-outline-secondary btn-sm rounded-circle me-1"><i class="ti ti-edit"></i></a>
-                <form action="{{ route('admin.pejabat.destroy', $officer->id) }}" method="POST" class="d-inline-block" onsubmit="return confirm('Hapus pejabat ini?');">
+                <form action="{{ route('admin.pejabat.destroy', $officer->id) }}" method="POST" class="d-inline-block">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-icon btn-outline-danger btn-sm rounded-circle"><i class="ti ti-trash"></i></button>
+                    <button type="submit" class="btn btn-icon btn-outline-danger btn-sm rounded-circle btn-delete"><i class="ti ti-trash"></i></button>
                 </form>
               </td>
             </tr>

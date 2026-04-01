@@ -203,10 +203,13 @@
         <!-- Filter Bar -->
         <div class="bg-white p-3 rounded-4 shadow-sm mb-5 border d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div class="d-flex gap-2 overflow-auto w-100" style="white-space: nowrap; scrollbar-width: none;">
-                <a href="#" class="btn btn-primary rounded-pill px-4 fw-bold">Semua Kategori</a>
-                <a href="#" class="btn btn-light rounded-pill px-4 text-muted border">Operasi Kepolisian</a>
-                <a href="#" class="btn btn-light rounded-pill px-4 text-muted border">Edukasi & Sosialisasi</a>
-                <a href="#" class="btn btn-light rounded-pill px-4 text-muted border">Pelayanan SIM</a>
+                <a href="{{ route('berita.index') }}" class="btn {{ !request('category') ? 'btn-primary' : 'btn-light text-muted border' }} rounded-pill px-4 fw-bold">Semua Kategori</a>
+                @foreach($categories as $category)
+                <a href="{{ route('berita.index', ['category' => $category->slug]) }}" 
+                   class="btn {{ request('category') == $category->slug ? 'btn-primary' : 'btn-light text-muted border' }} rounded-pill px-4">
+                    {{ $category->name }}
+                </a>
+                @endforeach
             </div>
             
             <div class="position-relative w-100" style="max-width: 300px;">

@@ -64,8 +64,8 @@
                   </span>
                 </a>
               </li>
-              <li class="nav-item {{ request()->routeIs('admin.berita.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.berita.index') }}" >
+              <li class="nav-item dropdown {{ request()->routeIs('admin.berita.*') || request()->routeIs('admin.kategori.*') ? 'active' : '' }}">
+                <a class="nav-link dropdown-toggle" href="#navbar-berita" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                   <span class="nav-link-icon d-md-none d-lg-inline-block">
                     <i class="ti ti-news" style="font-size: 1.3rem;"></i>
                   </span>
@@ -73,26 +73,14 @@
                     Manajemen Berita
                   </span>
                 </a>
-              </li>
-              <li class="nav-item {{ request()->routeIs('admin.pejabat.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.pejabat.index') }}" >
-                  <span class="nav-link-icon d-md-none d-lg-inline-block">
-                    <i class="ti ti-id" style="font-size: 1.3rem;"></i>
-                  </span>
-                  <span class="nav-link-title">
-                    Profil Pimpinan
-                  </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" >
-                  <span class="nav-link-icon d-md-none d-lg-inline-block">
-                    <i class="ti ti-file-certificate" style="font-size: 1.3rem;"></i>
-                  </span>
-                  <span class="nav-link-title">
-                    Layanan
-                  </span>
-                </a>
+                <div class="dropdown-menu {{ request()->routeIs('admin.berita.*') || request()->routeIs('admin.kategori.*') ? 'show' : '' }}">
+                  <a class="dropdown-item {{ request()->routeIs('admin.berita.*') ? 'active' : '' }}" href="{{ route('admin.berita.index') }}">
+                    Daftar Berita
+                  </a>
+                  <a class="dropdown-item {{ request()->routeIs('admin.kategori.*') ? 'active' : '' }}" href="{{ route('admin.kategori.index') }}">
+                    Kategori Berita
+                  </a>
+                </div>
               </li>
               <li class="nav-item {{ request()->routeIs('admin.galeri.*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('admin.galeri.index') }}" >
@@ -202,8 +190,38 @@
     </div>
     
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('assets/js/tabler.min.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script>
+        // Global Delete Confirmation
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.btn-delete');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const form = this.closest('form');
+                    
+                    Swal.fire({
+                        title: 'Apakah Anda yakin?',
+                        text: "Data yang dihapus tidak dapat dikembalikan!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Ya, Hapus!',
+                        cancelButtonText: 'Batal',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
     @stack('scripts')
   </body>
 </html>

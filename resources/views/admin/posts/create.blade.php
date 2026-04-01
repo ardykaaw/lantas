@@ -97,6 +97,12 @@
                             </div>
 
                             <div class="mb-4">
+                                <label class="form-label fw-bold text-dark"><i class="ti ti-calendar me-1 text-primary"></i> Tanggal Publikasi (Opsional)</label>
+                                <input type="datetime-local" name="created_at" class="form-control" value="{{ old('created_at', now()->format('Y-m-d\TH:i')) }}">
+                                <small class="form-hint text-muted">Abaikan jika ingin menggunakan waktu saat ini.</small>
+                            </div>
+
+                            <div class="mb-4">
                                 <label class="form-label required fw-bold text-dark"><i class="ti ti-send me-1 text-primary"></i> Status Publikasi</label>
                                 <select name="status" class="form-select" required>
                                     <option value="published" {{ old('status') == 'published' ? 'selected' : '' }}>Publikasikan Segera</option>

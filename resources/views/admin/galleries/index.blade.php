@@ -55,10 +55,10 @@
                     </div>
                     
                     <div class="mt-auto pt-3 border-top d-flex justify-content-between">
-                        <form action="{{ route('admin.galeri.destroy', $gallery->id) }}" method="POST" onsubmit="return confirm('Hapus media ini?');">
+                        <form action="{{ route('admin.galeri.destroy', $gallery->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-outline-danger w-100">
+                            <button type="submit" class="btn btn-sm btn-outline-danger w-100 btn-delete">
                                 <i class="ti ti-trash me-2"></i> Hapus
                             </button>
                         </form>

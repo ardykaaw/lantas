@@ -45,5 +45,15 @@ Route::prefix('admin')->group(function () {
             'store' => 'admin.galeri.store',
             'destroy' => 'admin.galeri.destroy',
         ])->except(['edit', 'update', 'show']);
+
+        // Category Management
+        Route::resource('kategori', App\Http\Controllers\Admin\CategoryController::class)->names([
+            'index' => 'admin.kategori.index',
+            'create' => 'admin.kategori.create',
+            'store' => 'admin.kategori.store',
+            'edit' => 'admin.kategori.edit',
+            'update' => 'admin.kategori.update',
+            'destroy' => 'admin.kategori.destroy',
+        ]);
     });
 });
