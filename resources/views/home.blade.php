@@ -8,8 +8,8 @@
         <div class="container-xl">
             <div class="row align-items-center">
                 <div class="col-auto d-flex align-items-center gap-3">
-                    <span><i class="ti ti-phone me-1"></i> (0401) 3121110</span>
-                    <span><i class="ti ti-mail me-1"></i> lantaspoldasultra@polri.go.id</span>
+                    <span><i class="ti ti-phone me-1"></i> +624013194432</span>
+                    <span><i class="ti ti-mail me-1"></i> ditlantassultra@gmail.com</span>
                 </div>
                 <div class="col-auto ms-auto d-flex align-items-center gap-3">
                     <div class="running-text" style="max-width: 400px;">
@@ -784,19 +784,19 @@
                         <li>
                             <a href="#" style="display: flex; align-items: flex-start;">
                                 <i class="ti ti-map-pin me-2 mt-1" style="font-size:1rem;"></i>
-                                Jl. Boulevard, Kota Kendari, Sulawesi Tenggara
+                                Jln Haluoleo No.1 Gedung RTMC Polda Sultra
                             </a>
                         </li>
                         <li>
-                            <a href="tel:04013121110">
+                            <a href="tel:+624013194432">
                                 <i class="ti ti-phone me-2" style="font-size:1rem;"></i>
-                                (0401) 3121110
+                                +624013194432
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:lantaspoldasultra@polri.go.id">
+                            <a href="mailto:ditlantassultra@gmail.com">
                                 <i class="ti ti-mail me-2" style="font-size:1rem;"></i>
-                                lantaspoldasultra@polri.go.id
+                                ditlantassultra@gmail.com
                             </a>
                         </li>
                         <li>
