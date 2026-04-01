@@ -47,17 +47,3 @@ Route::prefix('admin')->group(function () {
         ])->except(['edit', 'update', 'show']);
     });
 });
-
-// TEMPORARY: Create Admin User for Production
-Route::get('/buat-admin-rahasia', function () {
-    $user = \App\Models\User::firstOrCreate(
-        ['email' => 'admin@ditlantas.co.id'],
-        [
-            'name' => 'Super Admin Ditlantas',
-            'password' => \Illuminate\Support\Facades\Hash::make('Lalulintas@2026'),
-            'email_verified_at' => now(),
-        ]
-    );
-
-    return $user->wasRecentlyCreated ? "User Admin Berhasil Dibuat!" : "User Admin Sudah Ada.";
-});
